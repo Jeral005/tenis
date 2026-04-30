@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>geiJSON</title>
+    </head>
+    <body>
+
+<h1>Datos del USGS de sismos en tiempo real</h1>  
+
+<p>Mediante un web service en formato geoJSON podemos obtener el reporte de sismos en tiempo real del USGS</p>
+
+<p>El objetivo es obtener una lista de los lugares donde han ocurrido sismos</p>
+
+<div id="listaDeSismos"></div>
+<div id="coordenates"></div>
+</body>
+<script>
+fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson')
+    .then(data => data.json())
+    .then(data => {
+        let sismos= data.features;
+        let listaHTML="<ol>";
+        sismos.forEach(sismo=>{
+    //console. tog(municipio.properties.NOM_MUN);
+            listaHTML+="<li>"+sismo.properties.place+" "+ sismo.properties.mag+ "</li>";
+        });
+        listaHTML+="</ol>"
+        document.getElementById("listaDeSismos").innerHTML = listaHTML;
+    });
+
+fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson')
+    .then(data => data.json())
+    .then(data => {
+        let sismos= data.features;
+        let listaHTML="<ol>";
+        sismos.forEach(sismo=>{
+    //console. tog(municipio.properties.NOM_MUN);
+            listaHTML+="<li>"+sismo.properties.place+" "+ sismo.properties.mag+ "</li>";
+        });
+        listaHTML+="</ol>"
+        document.getElementById("listaDeSismos").innerHTML = listaHTML;
+    });
+//codigo ejemplo
+fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson')
+  .then(response => response.json())
+  .then(data => {
+    let features = data.features;
+    let listaHTML = "<ol>";
+
+    features.forEach(feature => {
+      let place = feature.properties.place;
+      let coords = feature.geometry.coordinates; 
+      let lon = coords[0];
+      let lat = coords[1];
+      listaHTML += `<li>${place} → Lat: ${lat}, Lon: ${lon}</li>`;
+    });
+
+    listaHTML += "</ol>";
+    document.getElementById("coordenates").innerHTML = listaHTML;
+  });
+    </script>
+</html>

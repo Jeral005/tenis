@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>page title</title>
+    </head>
+    <body>
+        <h1> Eventos en java script</h2> 
+        <p id="frase"> javaScript puede cambiar esta imagen</p> 
+        <p>Un evento es una acción que ocurrre sobre un elemento html, por ejemplo "click", "cuando la pagina carga", "cuando el usuario sale de la pagina", "cuando el cursor del raton pasa por sobre una imagen" o "cuando el cursor del raton esta sobre una imagen y el usuario lo aleja de la misma".</p>
+
+        <h2>Objetivos de este ejercicio</h2>
+        <ol>Vamos a cambiar la imagen de un gato por la de un tigre dando click a un boton</ol>
+        <ol>Vamos a cambiar la imagen de un gato por la de un tigre dando click a un boton</ol>
+
+        <img id="gato" src="gato.jpg" alt="no se encontro la imagen" onmouseover="cambiar()" onmouseout="regresar();">
+        <button type="button" onclick='document.getElementById("frase").innerHTML = "Este texto acaba de cambiar!"'>Click aqui!</button>
+        <button type="button" onclick='document.getElementById("gato").src = "tigre.jpg"'>cambiar</button>
+
+        <img onmouseover="cambiarPerro()" id="perro" src="https://i.pinimg.com/1200x/9a/45/cb/9a45cbd975469b4fc60a35baaa2b39c4.jpg" alt="no se encontro la imagen">
+    </body>
+    <script>
+        let cachorroVisible=true;
+
+        function cambiarPerro(){
+                console.log("esta entrando al evento");
+            if (cachorroVisible==true){
+                document.getElementById("perro").src="https://goldenretriever.biz/wp-content/uploads/2015/07/Depositphotos_8232305_m-1024x682.jpg";
+                cachorroVisible=false;
+            }
+            else {
+                document.getElementById("perro").src="https://i.pinimg.com/1200x/9a/45/cb/9a45cbd975469b4fc60a35baaa2b39c4.jpg";
+                cachorroVisible=true
+        }
+        }
+
+
+
+     
+    function cambiar(){
+        //alert("el cursor del raton esta sobre la imagen");
+        //console.log("El cursor del raton esta sobre la imagen");
+        document.getElementById("gato").src="gato.jpg";
+    }
+        function regresar(){
+        document.getElementById("gato").src="tigre.jpg";
+    }
+    </script> 
+</html> 
+
+<> 

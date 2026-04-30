@@ -1,0 +1,51 @@
+
+<html>
+<body>
+<h1>Promesa</h1>
+<p>
+una promesa es algo que afirma que vas a cumplir, pero puede que no se cumplan
+</p>
+
+
+<h1>sincrono</h1>
+<p>
+Hacer que algp coincida al mismo tiempo
+</p>
+
+<h1>Asincrono</h1>
+<p>
+Hacer que algo no coincida al mismo tiempo
+</p>
+
+<h1>programacion Asincrono</h1>
+<p>
+Programar para que el codigo espere a que se cumpla las promesas o ensu caso no se cumpla
+</p>
+
+<h1>Lista de razas</h1>
+<div id="listaRazas"></divdiv>
+<script>
+fetch('caninos.json')
+	.then(response=>response.json())//transformar lo que la promesa responde con formato JSON
+	.then(data=>{
+		//console.log("Hola");//ya se cumplio la ultima promeza lanza el mensaje
+        //conmsole.log(data[0]);
+        largo=data.length;
+        let listahtml="<ul>";
+            for(i=0; i<largo; i++){
+                console.log(data[i].raza);
+                listahtml+="<li>"+data[i].raza+"</li>";
+            }
+
+            listahtml=listahtml+"</ul>";
+            console.log(listahtml)
+            document.getElementById("listaRazas").innerHTML=listahtml;
+
+
+
+	})
+///let perro=data[0];
+//console.log(perro)
+</script>
+</body>
+</html>

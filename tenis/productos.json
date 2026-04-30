@@ -1,0 +1,22 @@
+[
+    {
+    "nombre": "tenis panam 2025",
+    "descripcion": "Bonitos tenis",
+    
+    "imagen": "tenis1"
+    },
+    {
+    "nombre": "Jordan",
+    "descripcion": "Tenis de Michael Jordan",
+    "mayoreo":  2500,
+    "menudeo": 3500,
+    "imagen": "tenis2"
+    },
+    {
+    "nombre": "adidas",
+    "descripcion": "Tenis addidas 2026" ,
+    "mayoreo": 1000,
+    "menudeo": 1500,
+    "imagen": "tenis3"
+    }
+]

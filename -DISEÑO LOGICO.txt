@@ -1,0 +1,14 @@
+-DISEÑO LOGICO
+entradas
+	capa vectorial de cuenca o estaciones metereologicas
+	capa DEM
+	capa de pendiente de terreno
+	Capa de orientación de laderas
+salida
+capa vectorial con valores de elevación, pendiente y orientación de laderas, de tipo pologono o punto, según sea el caso 
+
+-MODELO LOGICO PARA EL CASO DE CUENCAS
+
+secuencia lógica de pasos 
+
+-MODELO LOGICO DE ESTACIONES

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>geiJSON</title>
+    </head>
+    <body>
+
+<h1>geoJSON</h1>  
+<p>el formato geoJSON es un formato oara la reprecentacion de datos geoespaciales</p>    
+<p>Lo podemos usar en forma de :</p>  
+
+
+<ol>
+    <li>Para programar: en forma de archivo</li>
+     <li>Para programar: en forma de web service</li>
+      <li>Como capa en Qgis</li>
+</ol>
+    </body>
+    <script>
+    fetch("map.geojson")
+        .then(respuesta =>respuesta.json())
+        .then(data=>{
+            console.log(data.features[0].gepmetry.coordenates[0]);
+        });
+    </script>
+</html>

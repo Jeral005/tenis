@@ -1,0 +1,89 @@
+
+<html>
+<body>
+<h1>Tarea 19 de marzo</h1>
+
+<p id="imagenes"></p>
+<p id="pdf"></p>
+<p id="zip"></p>
+<p id="link"></p>
+
+<script>
+const imagenes = [
+  "pavo.jpg",
+  "tigre.jpg",
+  "gato.jpg",
+  "elefante.jpg",
+  "lobo.jpg"
+];
+
+const pdf = [
+  "Matriz_fer.pdf",
+  "Matriz_fer.pdf",
+  "Matriz_fer.pdf",
+  "Matriz_fer.pdf",
+  "Matriz_fer.pdf"
+];
+
+const zip = [
+  "02_ModeloCartografico02.zip",
+  "02_ModeloCartografico02.zip",
+  "02_ModeloCartografico02.zip",
+  "02_ModeloCartografico02.zip",
+  "02_ModeloCartografico02.zip"
+];
+const link = [
+  "https://www.microsoft.com",
+  "https://www.google.com",
+  "https://www.wikipedia.org",
+  "https://www.changa.com",
+  "https://www.stackoverflow.com"
+];
+
+
+function chamba(array, tipo){
+  let html = "<ul>";
+  for(let i=0; i<array.length; i++){
+    if(tipo==="img"){
+      html += "<li><img src='"+array[i]+"' alt='Imagen "+(i+1)+"'width='200'></li>";
+    } else if(tipo==="pdf"){
+      html += "<li><a href='"+array[i]+"' target='_blank'>PDF "+(i+1)+"</a></li>";
+    } else if(tipo==="zip"){
+      html += "<li><a href='"+array[i]+"' download>ZIP "+(i+1)+"</a></li>";
+    } else if(tipo==="link"){
+      html += "<li><a href='"+array[i]+"' target='_blank'>Link "+(i+1)+"</a></li>";
+    }
+  }
+  html += "</ul>";
+  return html;
+}
+
+
+document.getElementById("imagenes").innerHTML = chamba(imagenes,"img");
+document.getElementById("pdf").innerHTML = chamba(pdf,"pdf");
+document.getElementById("zip").innerHTML = chamba(zip,"zip");
+document.getElementById("link").innerHTML = chamba(link,"link");
+
+
+
+
+/*
+//const significa una constante, osea que su valor nunca cambia
+const carros = ["Hummer", "Tsuru", "Aveo", "Sentra", "Mazda", "Chevy", "MG", "Ford", "Renault", "Ibiza"];
+//document.getElementById("demo").innerHTML = carros;
+let htmlAimprimir='<ul>';
+
+//0 < 5
+for(i=0; i<carros.length; i++){
+  //console.log(carros[i]);
+  htmlAimprimir=htmlAimprimir+'<li>'+carros[i]+'</li>';
+}
+htmlAimprimir=htmlAimprimir+'</ul>';
+
+console.log(htmlAimprimir);//esta linea es opcional, solo para verificar que el html se esta formando correctamente
+document.getElementById("demo").innerHTML=htmlAimprimir;
+*/
+</script>
+
+</body>
+</html>

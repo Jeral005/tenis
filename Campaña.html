@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables de un objeto</title>
+</head>
+<body>
+    <h1>Variables de objeto</h1>
+    <p>En JavaScript, las variables de objeto se llaman propiedades. 
+        Las propiedades son pares clave-valor que describen las características o 
+        atributos de un objeto. Puedes acceder a las propiedades de un objeto utilizando 
+        la notación de punto o la notación de corchetes.
+    </p>
+
+<script>
+let campaña={
+    medidas:"2.1 x 2.0 x 1.3",
+    materiales:{
+        paredesTecho:"100% poliester",
+        piso:"Polietileno"
+        }
+    }
+console.log(campaña)
+
+let persona={
+    nombre:"fernando",
+    apellidos:"paterno, materno",
+    estudios:{
+        licenciatura:"geoinformatica",
+        preparatoria:"EPO 41"
+    },
+    pais:"Mexico",
+    email:"fernan229152@gmail.com"
+}
+console.log(persona)
+
+let perro={
+    nombre:"tutui",
+    raza:"Mestizo",
+    color:"amarillo",
+    tamaño:"mediano",
+    edad:"desconocido",
+    vacunas2:["moquillo","rabia","hepatitis"],
+    estado:{
+        vivo:true,
+        muerto:false
+    },
+    vacunas:{
+        rabia:true,
+        parvovirus:false,
+        hepatitis:false,
+        moquillo:false
+    },
+
+}
+
+let perros=[
+{    nombre:"tutui",
+    raza:"Mestizo",
+    color:"amarillo",
+    tamaño:"mediano",
+    edad:"desconocido",
+    vacunas2:["moquillo","rabia","hepatitis"], },
+{    nombre:"tutui",
+    raza:"Chihuahuia",
+    color:"blanco",
+    tamaño:"mediano",
+    edad:"desconocido",
+    vacunas2:["moquillo","rabia","hepatitis"], },
+{    nombre:"tutui",
+    raza:"Sholoscuincle",
+    color:"Negro",
+    tamaño:"mediano",
+    edad:"desconocido",
+    vacunas2:["moquillo","rabia","hepatitis"], },
+{    nombre:"tutui",
+    raza:"Pastor",
+    color:"amarillo y cafe",
+    tamaño:"mediano",
+    edad:"desconocido",
+    vacunas2:["moquillo","rabia","hepatitis"], },
+{
+    nombre:"tutui",
+    raza:"Mestizo",
+    color:"amarillo",
+    tamaño:"mediano",
+    edad:"desconocido",
+    vacunas2:["moquillo","rabia","hepatitis"],   
+}];
+console.log(perros[2])
+console.log(perro.nombre)
+console.log(perro.vacunas2)
+perro.vacunas2.push("gripe")
+console.log(perro.vacunas)
+</script>
+
+
+

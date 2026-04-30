@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<link rel = "<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+
+<style>
+#map { height: 180px; }
+</style>
+</head>
+<title>Leaflet</title>
+
+<h1>Geovisualizador de sismos</h1>
+
+<p >Vamos a visualizar un mapa de leaflet con los sismos de USGS</p>
+
+
+
+
+<body>
+
+<div id = "map"></div>
+
+</body>
+
+<script>
+    
+    let map = L.map('map').setView([19.28658999808457, -99.67684791713852], 17);
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+
+fetch('https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_hour.geojson')
+    .then(data=>data.json())
+    .then(data=>{
+        //onsole.log(data.features[0].properties.place);
+        let sismos= data.features;
+        //let listaHTML="<ol>";
+        sismos.forEach(sismo => {
+            //console.log(municipio.properties.NOM_MUN);
+            sismo.forEach(sismo =>{
+                x=sismo.geometry.cordinates[0];
+                y=sismo.geometry.cordinates[1];
+                L.marker
+                console.log(x,y);
+            })
+        });
+    });
+
+
+var marker = L.marker([19.28658999808457, -99.67684791713852]).addTo(map);
+</script>
+
+</html>

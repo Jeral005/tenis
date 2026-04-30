@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>geoJSON</title>
+</head>
+<body>
+
+<h1>geoJSON</h1>
+<p>El formato geoJSON es un formato para la representación de datos geoespaciales.</p>
+<p>Lo podemos usar en forma de:</p>
+
+<ol>
+    <li>Como capa en QGIS</li>
+    <li>Para programar: en forma de archivo</li>    
+    <li>Para programar: en forma de web service</li>
+</ol>    
+
+<div id="listaMunicipios"></div>
+
+<script>
+fetch('125Geo.geojson')
+    .then(response => response.json())
+    .then(data => {
+        // Extraemos los municipios
+        let municipios = data.features;
+        let listaHTML = "<ol>";
+
+        municipios.forEach(municipio => {
+            listaHTML += "<li>" + municipio.properties.NOM_MUN + "</li>";
+        });
+
+        listaHTML += "</ol>";
+
+        // Insertamos la lista en el div
+        document.getElementById("listaMunicipios").innerHTML = listaHTML;
+    })
+    .catch(error => console.error("Error cargando el GeoJSON:", error));
+</script>
+
+</body>
+</html>

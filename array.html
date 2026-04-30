@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Arrays en JavaScript</h1>
+
+<p id="demo"></p>
+
+
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul> 
+
+<script>
+//const significa una constante, osea que su valor nunca cambia
+const carros = ["Tsuru", "Aveo", "Sentra", "Mazda", "Chevy"];
+document.getElementById("demo").innerHTML = carros;
+let htmlAimprimir='<ul>';
+
+for(i=0; i<carros.length; i++){
+  htmlAimprimir=htmlAimprimir+'<li>'+carros[i]+'</li>'
+}
+
+htmlAimprimir=htmlAimprimir+'</ul>';
+
+console.log(htmlAimprimir);
+document.getElementById("demo").innerHTML=htmlAimprimir;
+//---------------------------------------------------------------------------
+const animales=["elefante.JPG","gato.jpg","pajaro.jpg","lobo.jpg","tigre.jpg","pavo.jpg"]
+document.getElementById("demo").innerHTML = animales;
+let anima='<ul>';
+
+for(i=0; i<animales.length; i++){
+anima=anima+'<li>'+animales[i]+'</li>'
+
+}
+
+anima=anima+'</ul>';
+
+console.log(anima);
+document.getElementById("demo").innerHTML=anima;
+
+
+
+let archivo=["Matriz_fer"]
+
+
+</script>
+</body>
+</html>
